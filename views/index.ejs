@@ -148,7 +148,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/localization/messages_es.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script>
         $(document).ready( function () {
             $('#table-users').DataTable();
@@ -203,6 +202,8 @@
                         success: function(data) {
                             $('#insert_table').html(data)
                             $('#form_crear_users')[0].reset();
+                            validation.destroy();
+
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
@@ -213,8 +214,6 @@
                         }
                     })
 
-                    validation.destroy();
-                    validation.resetForm();
                 }
             });
 
@@ -284,6 +283,7 @@
                         data: $('#form_editar_user').serialize(),
                         success: function(data) {
                             $('#insert_table').html(data)
+                            updateValidation.resetForm();
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
@@ -294,8 +294,6 @@
                         }
                     })
 
-                    updateValidation.destroy();
-                    updateValidation.resetForm();
                 }
             });
 
