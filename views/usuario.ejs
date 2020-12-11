@@ -1,0 +1,42 @@
+<form id="form_editar_user" method="POST">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" name="nombres" class="form-control" value="<%= usuario.nombres %>" placeholder="Nombres">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" class="form-control" value="<%= usuario.apellidos %>" placeholder="Apellidos">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="documento">Documento De Identidad</label>
+                    <input type="number" name="documento" class="form-control" value="<%= usuario.documento %>" placeholder="Documento De Identidad">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" value="<%= usuario.email %>" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="number" name="telefono" class="form-control" value="<%= usuario.telefono %>" placeholder="Teléfono">
+                </div>
+            </div>
+            <input type="hidden" name="id" value="<%= usuario._id %>">
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <input type="submit" data-id="<%= usuario._id %>" id="btn_editar_usuario" class="btn btn-primary" value="Guardar">
+    </div>
+</form>
