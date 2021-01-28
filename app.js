@@ -20,3 +20,5 @@ app.set('view engine', 'ejs');
 app.listen(app.get('port'), ()=> {
 	console.log('run in port:', app.get('port'))
 });
+
+// console.log('juan');
